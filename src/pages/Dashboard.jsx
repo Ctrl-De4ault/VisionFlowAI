@@ -11,10 +11,10 @@ import Sidebar from '../components/layout/Sidebar'
 import './Dashboard.css'
 
 const metrics = [
-  { label: 'Active cameras', value: '24', detail: '22 online · 2 in service', icon: FiVideo, accent: 'blue' },
-  { label: 'Vehicles detected', value: '12,486', detail: '8.2% above daily baseline', icon: FiArrowUpRight, accent: 'violet' },
-  { label: 'Network velocity', value: '38 km/h', detail: 'Within target operating range', icon: FiClock, accent: 'teal' },
-  { label: 'Open incidents', value: '3', detail: 'One needs operator review', icon: FiAlertTriangle, accent: 'orange' },
+  { label: 'Active cameras', value: '24', detail: '22 online · 2 in service', icon: FiVideo, tone: 'light' },
+  { label: 'Vehicles detected', value: '12,486', detail: '8.2% above daily baseline', icon: FiArrowUpRight, tone: 'dark' },
+  { label: 'Network velocity', value: '38 km/h', detail: 'Within target operating range', icon: FiClock, tone: 'light' },
+  { label: 'Open incidents', value: '3', detail: 'One needs operator review', icon: FiAlertTriangle, tone: 'lime' },
 ]
 
 const cameras = [
@@ -37,31 +37,31 @@ function Dashboard() {
         <Navbar />
         <div className="dashboard-content">
           <section className="dashboard-hero">
-            <div>
-              <p className="eyebrow">Tuesday, 11 June · 09:42 IST</p>
-              <h2>City traffic, under control.</h2>
-              <p className="hero-copy">A real-time view of the road network, prioritised for quick operational decisions.</p>
+            <div className="hero-copy-wrap">
+              <p className="eyebrow">Traffic intelligence · Live</p>
+              <h2>Make every intersection <mark>flow better.</mark></h2>
+              <p className="hero-copy">A single operational view for live camera coverage, traffic movement, and the events that need attention.</p>
+              <button className="primary-button" type="button">Open traffic map <FiArrowUpRight /></button>
             </div>
-            <div className="network-health"><span><i /> Network healthy</span><small>24 of 26 cameras reporting</small></div>
+            <div className="traffic-orbit" aria-hidden="true">
+              <span className="orbit-road road-one" /><span className="orbit-road road-two" /><span className="orbit-road road-three" />
+              <span className="orbit-node node-one" /><span className="orbit-node node-two" /><span className="orbit-node node-three" />
+              <span className="orbit-core"><FiMapPin /></span>
+            </div>
           </section>
 
           <section className="metric-grid" aria-label="Network statistics">
-            {metrics.map(({ label, value, detail, icon: Icon, accent }) => (
-              <article className="metric-card" key={label}>
-                <div className="metric-top"><span className={`metric-icon ${accent}`}><Icon /></span><button aria-label={`Options for ${label}`} type="button"><FiMoreHorizontal /></button></div>
-                <p>{label}</p>
-                <h3>{value}</h3>
-                <small>{detail}</small>
+            {metrics.map(({ label, value, detail, icon: Icon, tone }) => (
+              <article className={`metric-card ${tone}`} key={label}>
+                <div className="metric-top"><span className="metric-icon"><Icon /></span><button aria-label={`Options for ${label}`} type="button"><FiMoreHorizontal /></button></div>
+                <p>{label}</p><h3>{value}</h3><small>{detail}</small>
               </article>
             ))}
           </section>
 
           <section className="content-grid">
             <div className="panel cameras-panel">
-              <div className="panel-heading">
-                <div><p className="eyebrow">Live network</p><h2>Priority camera feeds</h2></div>
-                <button className="text-button" type="button">Open live map <FiArrowUpRight /></button>
-              </div>
+              <div className="panel-heading"><div><p className="eyebrow"><mark>Live network</mark></p><h2>Priority camera feeds</h2></div><button className="text-button" type="button">View all <FiArrowUpRight /></button></div>
               <div className="camera-grid">
                 {cameras.map((camera, index) => (
                   <article className="camera-card" key={camera.name}>
@@ -76,7 +76,7 @@ function Dashboard() {
             </div>
 
             <aside className="panel incidents-panel">
-              <div className="panel-heading"><div><p className="eyebrow">Operations queue</p><h2>Recent incidents</h2></div><button className="text-button" type="button">View queue</button></div>
+              <div className="panel-heading"><div><p className="eyebrow"><mark>Operator queue</mark></p><h2>Recent incidents</h2></div><button className="text-button" type="button">Open queue</button></div>
               <div className="incident-list">
                 {incidents.map((incident) => (
                   <article className="incident" key={incident.title}>
