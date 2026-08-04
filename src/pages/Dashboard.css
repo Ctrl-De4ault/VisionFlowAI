@@ -1,0 +1,15 @@
+.cameras-panel { min-width: 0; }
+
+@media (min-width: 781px) and (max-width: 1120px) {
+  .incidents-panel { max-width: none; }
+}
+
+@media (max-width: 1120px) {
+  .cameras-panel,
+  .incidents-panel { width: 100%; }
+}
+
+@media (max-width: 600px) {
+  .incident { align-items: flex-start; }
+  .severity { display: none; }
+}

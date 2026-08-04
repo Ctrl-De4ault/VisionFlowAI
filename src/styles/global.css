@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+
+:root { font-family: 'DM Sans', sans-serif; color: #edf1ff; background: #080d19; font-synthesis: none; text-rendering: optimizeLegibility; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: #080d19; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+.app-shell { display: flex; min-height: 100vh; }
+.main-content { min-width: 0; flex: 1; background: radial-gradient(circle at 80% -10%, #17234b 0, transparent 28%), #0b1020; }
+.dashboard-content { max-width: 1600px; margin: 0 auto; padding: 30px 34px 48px; }
+.eyebrow { color: #7f8ba8; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.intro, .panel-heading, .camera-info, .incident, .navbar, .navbar-actions { display: flex; align-items: center; }
+.intro, .panel-heading { justify-content: space-between; gap: 16px; }
+.intro h2 { margin-bottom: 7px; font-size: 1.55rem; }
+.intro p, .camera-info p, .incident p { color: #8f9ab4; font-size: .86rem; }
+.primary-button { display: inline-flex; align-items: center; gap: 9px; border: 0; border-radius: 10px; padding: 11px 15px; background: #4f6bff; color: #fff; font-weight: 700; box-shadow: 0 8px 22px rgba(79, 107, 255, .24); }
+.primary-button:hover { background: #6079ff; }
+.metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 28px 0; }
+.metric-card, .panel { border: 1px solid rgba(143, 160, 207, .13); border-radius: 16px; background: rgba(18, 27, 50, .8); box-shadow: 0 14px 35px rgba(0, 0, 0, .12); }
+.metric-card { padding: 20px; }
+.metric-icon { display: grid; width: 38px; height: 38px; margin-bottom: 16px; place-items: center; border-radius: 10px; font-size: 1.05rem; }
+.metric-icon.blue { color: #87a1ff; background: #233565; }.metric-icon.violet { color: #c6a3ff; background: #3a2862; }.metric-icon.teal { color: #78e3d0; background: #164b4d; }.metric-icon.orange { color: #ffc27b; background: #5a3b22; }
+.metric-card p { color: #8f9ab4; font-size: .86rem; }.metric-card h3 { margin: 6px 0; font-size: 1.48rem; }.metric-card small { color: #74c9a8; font-size: .76rem; }
+.content-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(310px, .9fr); gap: 20px; }.panel { padding: 22px; }.panel-heading h2 { margin-top: 5px; font-size: 1.08rem; }.text-button { border: 0; background: transparent; color: #9badff; font-weight: 700; font-size: .82rem; }
+.camera-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; margin-top: 20px; }.camera-card { overflow: hidden; border: 1px solid rgba(143, 160, 207, .11); border-radius: 12px; background: #10182c; }.camera-visual { position: relative; height: 142px; overflow: hidden; background: linear-gradient(125deg, #202a4e, #12182b 56%, #314767); }.camera-visual::before { position: absolute; inset: -80% 25% 0; content: ''; transform: rotate(31deg); background: repeating-linear-gradient(90deg, transparent 0 34px, rgba(228,238,255,.8) 34px 38px, transparent 38px 70px); opacity: .44; }.visual-2 { background: linear-gradient(130deg, #0e2933, #183844 47%, #263d3c); }.visual-3 { background: linear-gradient(130deg, #3c2330, #1b1a2b 48%, #482934); }.live-pill, .camera-id { position: absolute; top: 10px; z-index: 1; font-size: .64rem; font-weight: 700; }.live-pill { left: 10px; display: flex; align-items: center; gap: 5px; padding: 5px 7px; border-radius: 6px; background: rgba(8, 14, 27, .75); }.live-pill i, .live-status i { width: 6px; height: 6px; border-radius: 50%; background: #48d89a; }.camera-id { right: 10px; color: #c2cce6; }.camera-info { justify-content: space-between; gap: 8px; padding: 13px; }.camera-info h3, .incident h3 { font-size: .82rem; }.camera-info p { margin-top: 4px; font-size: .72rem; }.congestion, .severity { padding: 4px 7px; border-radius: 5px; font-size: .63rem; font-weight: 700; }.congestion.green, .severity.resolved { color: #7be6b9; background: #153f38; }.congestion.orange, .severity.medium { color: #ffc37f; background: #513921; }.congestion.red, .severity.high { color: #ff9da4; background: #532b37; }
+.incident-list { margin-top: 10px; }.incident { position: relative; gap: 11px; padding: 17px 0; border-bottom: 1px solid rgba(143, 160, 207, .11); }.incident:last-child { border: 0; }.incident-dot { width: 8px; height: 8px; align-self: flex-start; margin-top: 6px; flex: 0 0 auto; border-radius: 50%; }.incident-dot.high { background: #f46d7a; box-shadow: 0 0 0 4px rgba(244,109,122,.12); }.incident-dot.medium { background: #ffb65e; box-shadow: 0 0 0 4px rgba(255,182,94,.12); }.incident-dot.resolved { background: #55cba0; box-shadow: 0 0 0 4px rgba(85,203,160,.12); }.incident div { min-width: 0; flex: 1; }.incident p { margin: 4px 0; font-size: .73rem; }.incident small { color: #66738f; font-size: .68rem; }
+@media (max-width: 1120px) { .metric-grid { grid-template-columns: repeat(2, 1fr); }.content-grid { grid-template-columns: 1fr; }.camera-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 780px) { .sidebar { display: none; }.dashboard-content { padding: 22px 18px; }.navbar { padding: 16px 18px; }.navbar-actions .search, .live-status { display: none; }.menu-button { display: grid !important; }.intro { align-items: flex-start; flex-direction: column; }.camera-grid { grid-template-columns: 1fr; }.camera-visual { height: 175px; } }
+@media (max-width: 480px) { .metric-grid { grid-template-columns: 1fr; }.navbar h1 { font-size: 1.2rem; }.intro h2 { font-size: 1.3rem; }.panel { padding: 17px; } }
