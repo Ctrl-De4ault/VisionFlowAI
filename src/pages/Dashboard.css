@@ -1,15 +1,54 @@
-.cameras-panel { min-width: 0; }
+.dashboard-hero,
+.metric-top,
+.panel-heading,
+.camera-info,
+.incident { display: flex; align-items: center; }
 
-@media (min-width: 781px) and (max-width: 1120px) {
-  .incidents-panel { max-width: none; }
-}
+.dashboard-hero,
+.panel-heading { justify-content: space-between; gap: 24px; }
 
-@media (max-width: 1120px) {
-  .cameras-panel,
-  .incidents-panel { width: 100%; }
-}
+.dashboard-hero { min-height: 106px; }
+.dashboard-hero h2 { max-width: 620px; margin: 7px 0 9px; color: #f2f5ee; font-size: clamp(1.7rem, 2.5vw, 2.25rem); letter-spacing: -.06em; }
+.hero-copy { max-width: 570px; color: #969e97; font-size: .91rem; line-height: 1.55; }
+.network-health { min-width: 208px; padding: 14px 16px; border: 1px solid #363d33; border-radius: 9px; background: rgba(28, 32, 26, .72); }
+.network-health span { display: flex; align-items: center; gap: 7px; color: #dce9cb; font-size: .77rem; font-weight: 700; }
+.network-health i { width: 7px; height: 7px; border-radius: 50%; background: #caff4c; box-shadow: 0 0 0 4px rgba(202,255,76,.08); }
+.network-health small { display: block; margin-top: 6px; color: #899287; font-size: .68rem; }
 
-@media (max-width: 600px) {
-  .incident { align-items: flex-start; }
-  .severity { display: none; }
-}
+.metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 31px 0 20px; }
+.metric-card,
+.panel { border: 1px solid #2d312e; border-radius: 11px; background: rgba(21, 23, 22, .88); box-shadow: 0 16px 40px rgba(0,0,0,.13); }
+.metric-card { padding: 18px; transition: transform .18s ease, border-color .18s ease; }
+.metric-card:hover { border-color: #454d42; transform: translateY(-2px); }
+.metric-top { justify-content: space-between; margin-bottom: 17px; }
+.metric-top button { display: grid; width: 24px; height: 24px; place-items: center; border: 0; background: transparent; color: #79817b; }
+.metric-icon { display: grid; width: 35px; height: 35px; place-items: center; border: 1px solid; border-radius: 8px; font-size: .96rem; }
+.metric-icon.blue { border-color: #465c72; background: #17242d; color: #a7d8f7; }.metric-icon.violet { border-color: #59506e; background: #221f2d; color: #cfbdf5; }.metric-icon.teal { border-color: #365a54; background: #142522; color: #a8e5d2; }.metric-icon.orange { border-color: #69563a; background: #282116; color: #f2c885; }
+.metric-card p { color: #929a93; font-size: .75rem; font-weight: 600; }
+.metric-card h3 { margin: 7px 0 5px; color: #f0f3ed; font-size: 1.42rem; letter-spacing: -.045em; }
+.metric-card small { color: #84917e; font-size: .68rem; }
+
+.content-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(320px, .85fr); gap: 14px; }
+.panel { padding: 21px; }
+.panel-heading h2 { margin-top: 5px; color: #eff2ed; font-size: 1.04rem; letter-spacing: -.035em; }
+.text-button { display: inline-flex; align-items: center; gap: 5px; border: 0; background: transparent; color: #caff4c; font-size: .73rem; font-weight: 700; }
+.text-button:hover { color: #e2ffac; }
+
+.camera-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; }
+.camera-card { overflow: hidden; border: 1px solid #303530; border-radius: 9px; background: #151716; }
+.camera-visual { position: relative; height: 162px; overflow: hidden; background: linear-gradient(140deg, #282f2b, #161a18 52%, #3a4039); }
+.camera-visual::before { position: absolute; inset: -92% 22% -40%; content: ''; transform: rotate(31deg); background: repeating-linear-gradient(90deg, transparent 0 40px, rgba(232,238,223,.8) 40px 44px, transparent 44px 80px); opacity: .4; }
+.camera-visual::after { position: absolute; inset: 0; content: ''; background: linear-gradient(180deg, rgba(4,5,5,.1), rgba(4,5,5,.12) 45%, rgba(4,5,5,.76)); }
+.visual-2 { background: linear-gradient(140deg, #16313a, #17251e 55%, #294137); }.visual-3 { background: linear-gradient(140deg, #3a2d22, #1f1d17 55%, #2b3431); }
+.feed-meta { display: flex; position: absolute; z-index: 1; top: 11px; right: 11px; left: 11px; align-items: center; justify-content: space-between; }
+.live-pill { display: flex; align-items: center; gap: 5px; padding: 5px 7px; border: 1px solid rgba(255,255,255,.13); border-radius: 5px; background: rgba(9,11,10,.74); color: #eaf0e4; font-size: .61rem; font-weight: 700; }
+.live-pill i { width: 5px; height: 5px; border-radius: 50%; background: #caff4c; }.camera-id { color: #d8ddd5; font-size: .61rem; font-weight: 700; letter-spacing: .06em; }
+.feed-location { display: flex; position: absolute; z-index: 1; right: 11px; bottom: 11px; left: 11px; align-items: center; gap: 5px; color: #e3e8e0; font-size: .64rem; font-weight: 600; }
+.camera-info { justify-content: space-between; gap: 8px; padding: 14px; }.camera-info h3, .incident h3 { color: #e8ece6; font-size: .8rem; letter-spacing: -.02em; }.camera-info p { margin-top: 4px; color: #879087; font-size: .68rem; }
+.congestion, .severity { padding: 4px 6px; border: 1px solid; border-radius: 5px; font-size: .6rem; font-weight: 700; }.congestion.green, .severity.resolved { border-color: #375a4a; background: #162d24; color: #a8e5c6; }.congestion.orange, .severity.medium { border-color: #665239; background: #2b2418; color: #edc886; }.congestion.red, .severity.high { border-color: #6c4144; background: #321d20; color: #f4afb2; }
+
+.incident-list { margin-top: 10px; }.incident { position: relative; gap: 11px; padding: 17px 0; border-bottom: 1px solid #2b302c; }.incident:last-child { border: 0; }.incident-dot { width: 7px; height: 7px; align-self: flex-start; margin-top: 6px; flex: 0 0 auto; border-radius: 50%; }.incident-dot.high { background: #ec7b80; box-shadow: 0 0 0 4px rgba(236,123,128,.1); }.incident-dot.medium { background: #efbd73; box-shadow: 0 0 0 4px rgba(239,189,115,.1); }.incident-dot.resolved { background: #9adbb9; box-shadow: 0 0 0 4px rgba(154,219,185,.1); }.incident div { min-width: 0; flex: 1; }.incident p { margin: 4px 0; color: #8a928b; font-size: .7rem; }.incident small { color: #687168; font-size: .66rem; }
+
+@media (max-width: 1120px) { .metric-grid { grid-template-columns: repeat(2, 1fr); }.content-grid { grid-template-columns: 1fr; } }
+@media (max-width: 780px) { .dashboard-hero { align-items: flex-start; flex-direction: column; }.network-health { min-width: 0; width: 100%; }.camera-grid { grid-template-columns: 1fr; }.camera-visual { height: 184px; } }
+@media (max-width: 480px) { .metric-grid { grid-template-columns: 1fr; }.panel { padding: 17px; }.camera-info { padding: 13px; }.severity { display: none; } }
