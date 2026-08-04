@@ -1,35 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
 
-:root {
-  color: #f2f4f1;
-  background: #090a0b;
-  font-family: 'DM Sans', sans-serif;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-}
-
+:root { color: #171817; background: #b8b8b6; font-family: 'DM Sans', sans-serif; font-synthesis: none; text-rendering: optimizeLegibility; }
 * { box-sizing: border-box; }
-html { background: #090a0b; }
-body { min-width: 320px; min-height: 100vh; margin: 0; background: #090a0b; }
+html, body, #root { min-width: 320px; min-height: 100%; margin: 0; }
+body { background: #b8b8b6; }
 button, input { font: inherit; }
 button { cursor: pointer; }
 a { color: inherit; text-decoration: none; }
 h1, h2, h3, p { margin: 0; }
 h1, h2, h3 { font-family: 'Manrope', sans-serif; }
-button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid #caff4c; outline-offset: 3px; }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid #a8ff27; outline-offset: 3px; }
 
-.app-shell { display: flex; min-height: 100vh; }
-.main-content {
-  min-width: 0;
-  flex: 1;
-  background:
-    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px) 0 0 / 72px 72px,
-    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px) 0 0 / 72px 72px,
-    radial-gradient(circle at 88% -18%, rgba(202,255,76,.08), transparent 31%),
-    #101112;
-}
-.dashboard-content { max-width: 1540px; margin: 0 auto; padding: 38px 42px 54px; }
-.eyebrow { color: #9fa79f; font-size: .66rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+.app-shell { display: flex; width: min(1280px, calc(100% - 48px)); min-height: calc(100vh - 64px); margin: 32px auto; overflow: hidden; border: 1px solid rgba(0,0,0,.18); border-radius: 26px; background: #fbfbf8; box-shadow: 0 22px 60px rgba(0,0,0,.16); }
+.main-content { min-width: 0; flex: 1; background: #fbfbf8; }
+.dashboard-content { max-width: 1220px; margin: 0 auto; padding: 38px 40px 46px; }
+.eyebrow { color: #62645f; font-family: 'DM Mono', monospace; font-size: .63rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
 
-@media (max-width: 900px) { .dashboard-content { padding: 28px 24px 44px; } }
-@media (max-width: 620px) { .dashboard-content { padding: 22px 16px 38px; } }
+@media (max-width: 900px) { .app-shell { width: 100%; min-height: 100vh; margin: 0; border: 0; border-radius: 0; }.dashboard-content { padding: 30px 24px 42px; } }
+@media (max-width: 620px) { .dashboard-content { padding: 24px 16px 34px; } }
